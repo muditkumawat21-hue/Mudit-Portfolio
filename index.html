@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mudit Kumawat — Origin Arc</title>
+  <meta name="description" content="Portfolio of Mudit Kumawat, first-year student at Newton School of Technology. Explore his hackathon projects and skills through a manga-inspired experience." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── GLOBAL BACKGROUND CANVAS (anime-opening particle field) ── -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- ───────────── NAVIGATION ───────────── -->
+  <nav id="main-nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="Go to top">
+        <span class="logo-kanji">武</span>
+        <span class="logo-text">MUDIT</span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="#hero"      class="nav-link" data-section="hero">Intro</a></li>
+        <li><a href="#about"     class="nav-link" data-section="about">About</a></li>
+        <li><a href="#projects"  class="nav-link" data-section="projects">Projects</a></li>
+        <li><a href="#skills"    class="nav-link" data-section="skills">Skills</a></li>
+        <li><a href="#education" class="nav-link" data-section="education">Education</a></li>
+        <li><a href="#contact"   class="nav-link" data-section="contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ───────────── HERO ───────────── -->
+    <section id="hero" class="hero-section" aria-labelledby="hero-heading">
+
+      <!-- Speed lines background -->
+      <div class="speed-lines" aria-hidden="true"></div>
+
+      <!-- Halftone overlay -->
+      <div class="halftone-overlay" aria-hidden="true"></div>
+
+      <!-- Ink fleck particles (14 spans for denser field) -->
+      <div class="ink-flecks" aria-hidden="true">
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+        <span></span><span></span>
+      </div>
+
+      <!-- Crimson energy rings (anime aura effect) -->
+      <div class="bg-energy-rings" aria-hidden="true">
+        <div class="energy-ring energy-ring--1"></div>
+        <div class="energy-ring energy-ring--2"></div>
+        <div class="energy-ring energy-ring--3"></div>
+      </div>
+
+      <!-- Panel border accent -->
+      <div class="panel-border-accent" aria-hidden="true"></div>
+
+      <div class="hero-content">
+
+        <!-- Chapter label -->
+        <div class="chapter-label reveal">
+          <span class="chapter-tag">Chapter 01</span>
+          <span class="chapter-dash">——</span>
+          <span class="chapter-name">The Origin Arc</span>
+        </div>
+
+        <!-- Main title -->
+        <h1 id="hero-heading" class="hero-title reveal reveal-delay-1">
+          <span class="title-line title-small">The Story of</span>
+          <span class="title-line title-big">MUDIT</span>
+          <span class="title-line title-big title-crimson">KUMAWAT</span>
+        </h1>
+
+        <p class="hero-role reveal reveal-delay-2">
+          <span class="role-tag">First-year Student</span>
+          <span class="role-sep">·</span>
+          <span class="role-school">Newton School of Technology</span>
+        </p>
+
+        <p class="hero-intro reveal reveal-delay-3">
+          Code, curiosity, and relentless iteration. This is where the arc begins.
+        </p>
+
+        <div class="hero-cta reveal reveal-delay-4">
+          <a href="#projects" class="btn btn-primary" id="btn-explore">
+            <span class="btn-inner">Explore My Work</span>
+            <span class="btn-flash" aria-hidden="true"></span>
+          </a>
+          <a href="#about" class="btn btn-secondary" id="btn-about">About Me</a>
+        </div>
+
+        <!-- Scroll cue -->
+        <div class="scroll-cue reveal reveal-delay-5" aria-hidden="true">
+          <div class="scroll-line"></div>
+          <span class="scroll-text">Scroll to continue</span>
+        </div>
+      </div>
+
+      <!-- Hero artwork -->
+      <div class="hero-artwork reveal reveal-delay-2" aria-label="Manga-style illustration of a student coding at a desk, surrounded by code and speed lines">
+        <div class="artwork-panel">
+          <img src="hero.jpg" alt="Original manga-style illustration: a determined student coding at a glowing monitor, speed lines and code fragments radiating outward" width="700" height="394" />
+          <div class="panel-caption" aria-hidden="true">[ LOADING: SKILL TREE ]</div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- ───────────── ABOUT ───────────── -->
+    <section id="about" class="section about-section" aria-labelledby="about-heading">
+
+      <div class="section-inner">
+
+        <!-- Section header -->
+        <div class="section-header reveal">
+          <span class="section-number">— 02 —</span>
+          <h2 id="about-heading" class="section-title">The Protagonist</h2>
+          <div class="ink-underline" aria-hidden="true"></div>
+        </div>
+
+        <div class="about-grid">
+
+          <!-- Left: manga portrait panel -->
+          <div class="about-portrait reveal">
+            <div class="portrait-panel">
+              <div class="portrait-placeholder" aria-label="Placeholder for Mudit's photo or illustrated avatar">
+                <div class="portrait-art">
+                  <div class="portrait-silhouette" aria-hidden="true">
+                    <!-- Abstract manga face SVG -->
+                    <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                      <!-- Halftone BG -->
+                      <rect width="200" height="240" fill="#f5f0e8"/>
+                      <!-- Speed lines from top-right -->
+                      <line x1="200" y1="0"  x2="80" y2="120" stroke="#1a1a1a" stroke-width="0.5" opacity="0.15"/>
+                      <line x1="200" y1="20" x2="80" y2="120" stroke="#1a1a1a" stroke-width="0.5" opacity="0.15"/>
+                      <line x1="200" y1="40" x2="80" y2="120" stroke="#1a1a1a" stroke-width="0.5" opacity="0.15"/>
+                      <line x1="200" y1="60" x2="80" y2="120" stroke="#1a1a1a" stroke-width="0.5" opacity="0.15"/>
+                      <line x1="200" y1="80" x2="80" y2="120" stroke="#1a1a1a" stroke-width="0.5" opacity="0.15"/>
+                      <!-- Silhouette body -->
+                      <ellipse cx="100" cy="170" rx="55" ry="70" fill="#1a1a1a"/>
+                      <!-- Neck -->
+                      <rect x="88" y="115" width="24" height="25" fill="#1a1a1a"/>
+                      <!-- Head -->
+                      <ellipse cx="100" cy="100" rx="44" ry="50" fill="#1a1a1a"/>
+                      <!-- Hair spikes (manga style) -->
+                      <polygon points="60,75 50,45 75,68" fill="#1a1a1a"/>
+                      <polygon points="80,62 72,28 95,58" fill="#1a1a1a"/>
+                      <polygon points="100,58 100,22 115,56" fill="#1a1a1a"/>
+                      <polygon points="120,62 128,28 140,70" fill="#1a1a1a"/>
+                      <polygon points="140,80 155,50 148,85" fill="#1a1a1a"/>
+                      <!-- Face highlights -->
+                      <ellipse cx="83" cy="95" rx="10" ry="12" fill="#f5f0e8"/>
+                      <ellipse cx="117" cy="95" rx="10" ry="12" fill="#f5f0e8"/>
+                      <!-- Eyes -->
+                      <ellipse cx="83" cy="96" rx="7" ry="8" fill="#1a1a1a"/>
+                      <ellipse cx="117" cy="96" rx="7" ry="8" fill="#1a1a1a"/>
+                      <!-- Eye shine -->
+                      <circle cx="86" cy="93" r="2.5" fill="#fff"/>
+                      <circle cx="120" cy="93" r="2.5" fill="#fff"/>
+                      <!-- Glasses -->
+                      <rect x="73" y="88" width="21" height="16" rx="4" fill="none" stroke="#c0392b" stroke-width="1.5"/>
+                      <rect x="106" y="88" width="21" height="16" rx="4" fill="none" stroke="#c0392b" stroke-width="1.5"/>
+                      <line x1="94" y1="96" x2="106" y2="96" stroke="#c0392b" stroke-width="1.5"/>
+                      <!-- Nose -->
+                      <path d="M100 106 L96 118 L104 118" fill="none" stroke="#f5f0e8" stroke-width="1.5"/>
+                      <!-- Mouth - determined smirk -->
+                      <path d="M90 126 Q100 132 112 126" fill="none" stroke="#f5f0e8" stroke-width="2"/>
+                      <!-- Crimson accent mark -->
+                      <path d="M60 60 L65 50 L70 60" fill="#c0392b"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="portrait-label">
+                  <span>[ AVATAR PLACEHOLDER ]</span>
+                  <small>Replace with your photo or artwork</small>
+                </div>
+              </div>
+              <div class="portrait-panel-tag" aria-hidden="true">MUDIT K.</div>
+            </div>
+          </div>
+
+          <!-- Right: about text -->
+          <div class="about-text">
+
+            <div class="manga-speech reveal">
+              <p class="speech-bubble">
+                "Every great coder started as a first-year student. The difference is what they build along the way."
+              </p>
+            </div>
+
+            <div class="about-panels">
+
+              <div class="about-panel reveal reveal-delay-1">
+                <div class="panel-label" aria-hidden="true">ORIGIN</div>
+                <p>
+                  Mudit Kumawat is a <strong>first-year student at Newton School of Technology</strong>, already diving deep into technology, building projects, and competing in hackathons alongside teammates from day one.
+                </p>
+              </div>
+
+              <div class="about-panel reveal reveal-delay-2">
+                <div class="panel-label" aria-hidden="true">APPROACH</div>
+                <p>
+                  Curious by nature and grounded by practice — Mudit approaches problems by building. Whether hacking together a prototype at 3 a.m. or collaborating on a team project, he brings energy, focus, and a relentless willingness to learn.
+                </p>
+              </div>
+
+              <div class="about-panel reveal reveal-delay-3">
+                <div class="panel-label" aria-hidden="true">QUEST</div>
+                <p>
+                  The arc is just beginning. Hackathons, projects, and the long road of craft — each one a new chapter. This portfolio is the ongoing story.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ───────────── PROJECTS ───────────── -->
+    <section id="projects" class="section projects-section" aria-labelledby="projects-heading">
+
+      <!-- Animated halftone shimmer layer -->
+      <div class="section-halftone-shimmer" aria-hidden="true"></div>
+
+      <div class="section-inner">
+
+        <div class="section-header reveal">
+          <span class="section-number">— 03 —</span>
+          <h2 id="projects-heading" class="section-title">The Arc — Battles Fought</h2>
+          <div class="ink-underline" aria-hidden="true"></div>
+          <p class="section-subtitle">Hackathon projects and collaborative builds. More arcs incoming.</p>
+        </div>
+
+        <!-- Projects manga-panel grid -->
+        <div class="projects-grid" role="list">
+
+          <!-- Project Card 1 -->
+          <article class="project-card reveal" role="listitem" aria-labelledby="proj1-name">
+            <div class="card-chapter" aria-hidden="true">Arc 01</div>
+            <div class="card-content">
+              <div class="card-header">
+                <h3 id="proj1-name" class="card-title">[ Project Name ]</h3>
+                <span class="card-type">Hackathon Project</span>
+              </div>
+              <div class="card-panel-art" aria-hidden="true">
+                <div class="panel-dots"></div>
+                <div class="panel-icon">⚡</div>
+              </div>
+              <p class="card-description">
+                <em>Short description of what this project does and the problem it solves. To be filled in by Mudit.</em>
+              </p>
+              <div class="card-details">
+                <div class="detail-row">
+                  <span class="detail-label">My Role</span>
+                  <span class="detail-value placeholder-text">[ To be added ]</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Team</span>
+                  <span class="detail-value placeholder-text">[ To be added ]</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Tech Stack</span>
+                  <span class="detail-value placeholder-text">[ To be added ]</span>
+                </div>
+              </div>
+              <div class="card-footer">
+                <a href="#" class="card-link disabled" aria-label="Project link coming soon" tabindex="0">
+                  <span>View Project</span>
+                  <span class="link-arrow" aria-hidden="true">→</span>
+                </a>
+                <span class="card-badge placeholder">Coming Soon</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project Card 2 -->
+          <article class="project-card reveal reveal-delay-1" role="listitem" aria-labelledby="proj2-name">
+            <div class="card-chapter" aria-hidden="true">Arc 02</div>
+            <div class="card-content">
+              <div class="card-header">
+                <h3 id="proj2-name" class="card-title">[ Project Name ]</h3>
+                <span class="card-type">Hackathon Project</span>
+              </div>
+              <div class="card-panel-art" aria-hidden="true">
+                <div class="panel-dots"></div>
+                <div class="panel-icon">🔥</div>
+              </div>
+              <p class="card-description">
+                <em>Short description of what this project does and the problem it solves. To be filled in by Mudit.</em>
+              </p>
+              <div class="card-details">
+                <div class="detail-row">
+                  <span class="detail-label">My Role</span>
+                  <span class="detail-value placeholder-text">[ To be added ]</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Team</span>
+                  <span class="detail-value placeholder-text">[ To be added ]</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Tech Stack</span>
+                  <span class="detail-value placeholder-text">[ To be added ]</span>
+                </div>
+              </div>
+              <div class="card-footer">
+                <a href="#" class="card-link disabled" aria-label="Project link coming soon" tabindex="0">
+                  <span>View Project</span>
+                  <span class="link-arrow" aria-hidden="true">→</span>
+                </a>
+                <span class="card-badge placeholder">Coming Soon</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project Card 3 -->
+          <article class="project-card reveal reveal-delay-2" role="listitem" aria-labelledby="proj3-name">
+            <div class="card-chapter" aria-hidden="true">Arc 03</div>
+            <div class="card-content">
+              <div class="card-header">
+                <h3 id="proj3-name" class="card-title">[ Project Name ]</h3>
+                <span class="card-type">Collaborative Build</span>
+              </div>
+              <div class="card-panel-art" aria-hidden="true">
+                <div class="panel-dots"></div>
+                <div class="panel-icon">💡</div>
+              </div>
+              <p class="card-description">
+                <em>Short description of what this project does and the problem it solves. To be filled in by Mudit.</em>
+              </p>
+              <div class="card-details">
+                <div class="detail-row">
+                  <span class="detail-label">My Role</span>
+                  <span class="detail-value placeholder-text">[ To be added ]</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Team</span>
+                  <span class="detail-value placeholder-text">[ To be added ]</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Tech Stack</span>
+                  <span class="detail-value placeholder-text">[ To be added ]</span>
+                </div>
+              </div>
+              <div class="card-footer">
+                <a href="#" class="card-link disabled" aria-label="Project link coming soon" tabindex="0">
+                  <span>View Project</span>
+                  <span class="link-arrow" aria-hidden="true">→</span>
+                </a>
+                <span class="card-badge placeholder">Coming Soon</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Add More Placeholder -->
+          <article class="project-card project-card--add reveal reveal-delay-3" role="listitem" aria-label="Placeholder for future projects">
+            <div class="card-content add-card-content">
+              <div class="add-icon" aria-hidden="true">+</div>
+              <p class="add-text">Next Arc Loading…</p>
+              <small>Add your next project here</small>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ───────────── SKILLS ───────────── -->
+    <section id="skills" class="section skills-section" aria-labelledby="skills-heading">
+
+      <!-- Animated halftone shimmer layer -->
+      <div class="section-halftone-shimmer" aria-hidden="true"></div>
+      <div class="section-inner">
+
+        <div class="section-header reveal">
+          <span class="section-number">— 04 —</span>
+          <h2 id="skills-heading" class="section-title">Skill Tree</h2>
+          <div class="ink-underline" aria-hidden="true"></div>
+          <p class="section-subtitle">Powers still being unlocked — check back soon.</p>
+        </div>
+
+        <div class="skills-container reveal">
+          <div class="skills-placeholder-panel">
+            <div class="skills-placeholder-icon" aria-hidden="true">
+              <!-- Manga loading bar -->
+              <div class="loading-bar-manga">
+                <div class="lb-label">SKILLS INITIALIZING…</div>
+                <div class="lb-track">
+                  <div class="lb-fill"></div>
+                </div>
+                <div class="lb-dots">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+            </div>
+            <p class="skills-placeholder-text">
+              Skills will be listed here once Mudit fills them in.<br>
+              <em>[ To be added: Languages, Frameworks, Tools, etc. ]</em>
+            </p>
+          </div>
+
+          <!-- Skill category shells — ready for content -->
+          <div class="skill-categories">
+            <div class="skill-category reveal reveal-delay-1">
+              <div class="category-header">
+                <span class="category-icon" aria-hidden="true">💻</span>
+                <h3 class="category-name">Languages</h3>
+              </div>
+              <div class="skill-tags">
+                <span class="skill-tag placeholder-tag">[ To be added ]</span>
+              </div>
+            </div>
+
+            <div class="skill-category reveal reveal-delay-2">
+              <div class="category-header">
+                <span class="category-icon" aria-hidden="true">🛠️</span>
+                <h3 class="category-name">Frameworks & Tools</h3>
+              </div>
+              <div class="skill-tags">
+                <span class="skill-tag placeholder-tag">[ To be added ]</span>
+              </div>
+            </div>
+
+            <div class="skill-category reveal reveal-delay-3">
+              <div class="category-header">
+                <span class="category-icon" aria-hidden="true">🎯</span>
+                <h3 class="category-name">Other Skills</h3>
+              </div>
+              <div class="skill-tags">
+                <span class="skill-tag placeholder-tag">[ To be added ]</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ───────────── EDUCATION ───────────── -->
+    <section id="education" class="section education-section" aria-labelledby="education-heading">
+      <div class="section-inner">
+
+        <div class="section-header reveal">
+          <span class="section-number">— 05 —</span>
+          <h2 id="education-heading" class="section-title">The Academy</h2>
+          <div class="ink-underline" aria-hidden="true"></div>
+        </div>
+
+        <div class="education-timeline">
+
+          <div class="timeline-item reveal" aria-label="Education: Newton School of Technology">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <div class="edu-panel">
+                <div class="edu-badge" aria-hidden="true">
+                  <span class="badge-icon">🏛️</span>
+                </div>
+                <div class="edu-info">
+                  <h3 class="edu-institution">Newton School of Technology</h3>
+                  <p class="edu-status">First-Year Student</p>
+                  <p class="edu-note">
+                    <em>[ Degree, year, and additional details to be added ]</em>
+                  </p>
+                </div>
+                <div class="edu-panel-decoration" aria-hidden="true">
+                  <span class="edu-speed-lines"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item timeline-placeholder reveal reveal-delay-1" aria-label="Placeholder for future education entries">
+            <div class="timeline-dot timeline-dot--dashed" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <p class="timeline-placeholder-text">[ Previous education or certifications — add here ]</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ───────────── CONTACT ───────────── -->
+    <section id="contact" class="section contact-section" aria-labelledby="contact-heading">
+
+      <!-- Dramatic speed lines background -->
+      <div class="contact-speed-lines" aria-hidden="true"></div>
+      <div class="contact-halftone" aria-hidden="true"></div>
+      <!-- Animated halftone shimmer layer -->
+      <div class="section-halftone-shimmer" aria-hidden="true"></div>
+
+      <div class="section-inner">
+
+        <div class="section-header reveal">
+          <span class="section-number">— FINAL ARC —</span>
+          <h2 id="contact-heading" class="section-title contact-title">
+            Let's Build the<br>
+            <span class="title-crimson">Next Chapter.</span>
+          </h2>
+          <div class="ink-underline" aria-hidden="true"></div>
+        </div>
+
+        <!-- Dramatic final panel -->
+        <div class="contact-final-panel reveal">
+          <div class="final-panel-inner">
+
+            <div class="final-art" aria-hidden="true">
+              <div class="final-art-elements">
+                <div class="fa-circle fa-circle--lg"></div>
+                <div class="fa-circle fa-circle--md"></div>
+                <div class="fa-rays"></div>
+                <div class="fa-text-big" aria-hidden="true">TO BE CONTINUED</div>
+              </div>
+            </div>
+
+            <div class="contact-content">
+
+              <div class="contact-speech reveal reveal-delay-1">
+                <div class="speech-bubble speech-bubble--dark">
+                  "Have a project, a hackathon idea, or just want to connect? I'm always up for the next challenge."
+                </div>
+              </div>
+
+              <div class="contact-methods reveal reveal-delay-2">
+
+                <div class="contact-method">
+                  <span class="contact-icon" aria-hidden="true">📞</span>
+                  <div class="contact-detail">
+                    <span class="contact-label">Phone / Call</span>
+                    <a href="tel:+916377220379" class="contact-value" id="contact-phone" aria-label="Call Mudit at 6377220379">
+                      +91 6377220379
+                    </a>
+                  </div>
+                </div>
+
+                <div class="contact-method contact-method--placeholder">
+                  <span class="contact-icon" aria-hidden="true">✉️</span>
+                  <div class="contact-detail">
+                    <span class="contact-label">Email</span>
+                    <span class="contact-value placeholder-text">[ To be added ]</span>
+                  </div>
+                </div>
+
+                <div class="contact-method contact-method--placeholder">
+                  <span class="contact-icon" aria-hidden="true">🔗</span>
+                  <div class="contact-detail">
+                    <span class="contact-label">Social / GitHub / LinkedIn</span>
+                    <span class="contact-value placeholder-text">[ To be added ]</span>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="contact-cta reveal reveal-delay-3">
+                <a href="tel:+916377220379" class="btn btn-primary btn-large" id="cta-call" aria-label="Call Mudit now">
+                  <span class="btn-inner">📞  Call Now</span>
+                  <span class="btn-flash" aria-hidden="true"></span>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer -->
+      <footer class="site-footer" role="contentinfo">
+        <div class="footer-inner">
+          <p class="footer-credit">
+            Mudit Kumawat © <span id="footer-year"></span>
+            <span class="footer-sep">·</span>
+            Newton School of Technology
+          </p>
+          <p class="footer-note">Built with HTML &amp; CSS · Manga-style portfolio</p>
+        </div>
+      </footer>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
