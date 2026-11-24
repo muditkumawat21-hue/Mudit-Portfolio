@@ -2057,3 +2057,59 @@ main { position: relative; z-index: 1; }
 
   html { scroll-behavior: auto; }
 }
+
+/* ============================================================
+   PR LINKS — Project Card Pull Request list
+   ============================================================ */
+.card-pr-links {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--grey-1);
+}
+
+.card-pr-links .detail-label {
+  display: block;
+  margin-bottom: 0.6rem;
+}
+
+.pr-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.pr-list li {
+  display: flex;
+  align-items: flex-start;
+}
+
+.pr-link {
+  font-size: 0.8rem;
+  color: var(--crimson-lt);
+  text-decoration: none;
+  line-height: 1.4;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
+  word-break: break-word;
+}
+
+.pr-link:hover,
+.pr-link:focus-visible {
+  color: var(--paper);
+  border-bottom-color: var(--crimson-lt);
+}
+
+.pr-link-pending {
+  font-size: 0.8rem;
+  color: var(--grey-2);
+  font-style: italic;
+}
+
+/* edu-coursework paragraph */
+.edu-coursework {
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+  color: var(--paper-mid);
+  line-height: 1.5;
+}
